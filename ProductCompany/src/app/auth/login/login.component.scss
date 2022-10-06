@@ -1,0 +1,27 @@
+.login{
+  margin-top: 20px;
+  .login-form{
+    display: flex;
+    flex-direction: column;
+    .inputs{
+      color: white;
+    }
+    .label{
+      color: white;
+    }
+    ::ng-deep{
+    .mat-form-field-label{
+      color: white;
+    }
+    }
+    .account{
+      color: white;
+      margin-bottom: 10px;
+      width: max-content;
+    }
+  }
+  .disabled{
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

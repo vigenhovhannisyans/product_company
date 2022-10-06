@@ -1,0 +1,22 @@
+<div class="register">
+  <form [formGroup]="registerForm" class="register-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label class="label">Name</mat-label>
+      <input class="inputs" formControlName="name" matInput placeholder="your name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label class="label">Surname</mat-label>
+      <input class="inputs" formControlName="surname" matInput placeholder="your surname">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label class="label">Email</mat-label>
+      <input class="inputs" formControlName="email" matInput placeholder="example.@">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label class="label">Password</mat-label>
+      <input class="inputs" formControlName="email" matInput placeholder="password">
+    </mat-form-field>
+    <a routerLink="/auth/login" class="account">Do you have an account?</a>
+    <button [class.disabled]="registerForm.invalid" mat-raised-button color="primary">Register</button>
+  </form>
+</div>

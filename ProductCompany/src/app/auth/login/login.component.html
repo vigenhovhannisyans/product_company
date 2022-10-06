@@ -1,0 +1,14 @@
+<div class="login">
+    <form [formGroup]="loginForm" class="login-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label class="label">Email</mat-label>
+        <input class="inputs" formControlName="email" matInput placeholder="example.@">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label class="label">Password</mat-label>
+        <input class="inputs" formControlName="password" matInput placeholder="password">
+      </mat-form-field>
+      <a routerLink="/auth/register" class="account">I have not account yet</a>
+      <button [class.disabled]="loginForm.invalid" mat-raised-button color="primary">Login</button>
+    </form>
+</div>
