@@ -14,9 +14,9 @@
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label class="label">Password</mat-label>
-      <input class="inputs" formControlName="email" matInput placeholder="password">
+      <input class="inputs" formControlName="password" matInput placeholder="password">
     </mat-form-field>
     <a routerLink="/auth/login" class="account">Do you have an account?</a>
-    <button [class.disabled]="registerForm.invalid" mat-raised-button color="primary">Register</button>
+    <button (click)="registration()" [class.disabled]="registerForm.invalid" mat-raised-button color="primary">Register</button>
   </form>
 </div>
