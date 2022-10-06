@@ -4,6 +4,31 @@
   </div>
   <div class="content">
     <ul class="nav-ul">
+      <li class="list">
+      <span class="item-and-icon">
+        <img class="icon" src="../../../../assets/images/icons/my-task.svg" alt="">
+        <span class="title">
+          My Tasks
+        </span>
+      </span>
+        <span class="count">
+        6
+      </span>
+      </li>
+      <li class="list">
+      <span class="item-and-icon">
+        <img class="icon" src="../../../../assets/images/icons/activities.svg" alt="">
+        <span class="title">
+          Activities
+        </span>
+      </span>
+        <span class="count">
+        6
+      </span>
+      </li>
+    </ul>
+    <ul class="nav-ul">
+      <li class="list sub-titles">Main</li>
     <li class="list" *ngFor="let route of routes">
       <span class="item-and-icon">
         <img class="icon" [src]="route.iconUrl" alt="">
@@ -21,7 +46,10 @@
         {{messages}}
       </span>
     </li>
+    </ul>
+    <ul class="nav-ul">
       <li class="list sub-titles">Recent projects</li>
+
       <li class="list" *ngFor="let recentProject of recentProjects">
         <span class="item-and-icon">
         <img class="icon" [src]="recentProject.iconUrl" alt="">

@@ -2,16 +2,6 @@ import {RouteI} from "../../../core/interfaces/route-i";
 
 export const SidenavRoutes:RouteI[] = [
   {
-    iconUrl: '../../../../assets/images/icons/my-task.svg',
-    route:'my-tasks',
-    routeName: 'My Tasks'
-  },
-  {
-    iconUrl: '../../../../assets/images/icons/activities.svg',
-    route:'activities',
-    routeName: 'Activities'
-  },
-  {
     iconUrl: '../../../../assets/images/icons/home.svg',
     route:'overview',
     routeName: 'Overview'

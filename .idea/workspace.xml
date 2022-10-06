@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24aa89ac-ba1f-450c-85fc-10d80bd23cc9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductCompany/src/app/system/system.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProductCompany/src/app/system/system.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductCompany/src/app/system/system.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ProductCompany/src/app/system/system.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductCompany/src/app/system/system.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ProductCompany/src/app/system/system.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/sidenav-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/sidenav-routes.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            <state relative-caret-position="515">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -73,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/core/services/project.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
+            <state relative-caret-position="635">
               <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -82,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="504">
               <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
@@ -97,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/sidenav-routes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="57" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="57" />
+            <state relative-caret-position="48">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -106,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="208">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -166,12 +165,12 @@
         <option value="$PROJECT_DIR$/ProductCompany/src/app/system/system.component.html" />
         <option value="$PROJECT_DIR$/ProductCompany/src/app/system/system.component.scss" />
         <option value="$PROJECT_DIR$/ProductCompany/src/app/core/interfaces/route-i.ts" />
-        <option value="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/sidenav-routes.ts" />
-        <option value="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.scss" />
-        <option value="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.html" />
         <option value="$PROJECT_DIR$/ProductCompany/src/app/core/interfaces/project-i.ts" />
         <option value="$PROJECT_DIR$/ProductCompany/src/app/core/services/project.service.ts" />
         <option value="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.ts" />
+        <option value="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/sidenav-routes.ts" />
+        <option value="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.scss" />
+        <option value="$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.html" />
       </list>
     </option>
   </component>
@@ -352,12 +351,12 @@
       <updated>1665035212017</updated>
       <workItem from="1665035213204" duration="5937000" />
       <workItem from="1665041566131" duration="8978000" />
-      <workItem from="1665053242554" duration="9281000" />
+      <workItem from="1665053242554" duration="9761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24196000" />
+    <option name="totallyTimeSpent" value="24676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -376,7 +375,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -709,24 +708,10 @@
     <entry file="file://$PROJECT_DIR$/ProductCompany/src/assets/images/icons/message-2.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/system.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -746,14 +731,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/sidenav-routes.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="57" />
+        <state relative-caret-position="48">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/core/services/project.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
+        <state relative-caret-position="635">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -761,13 +756,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.ts">
+    <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="208">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProductCompany/src/app/system/components/side-nav/side-nav.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
