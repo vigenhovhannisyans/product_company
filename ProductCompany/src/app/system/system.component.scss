@@ -1,0 +1,13 @@
+.system{
+  display: flex;
+  justify-content: space-between;
+  .sidenav{
+    width: 280px;
+  }
+  .project-details-side{
+    width: 320px;
+  }
+  .outlet{
+    width: 100%;
+  }
+}

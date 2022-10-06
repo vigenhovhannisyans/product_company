@@ -1,0 +1,35 @@
+<div class="sidenav">
+  <div class="header">
+    <app-logo></app-logo>
+  </div>
+  <div class="content">
+    <ul class="nav-ul">
+    <li class="list" *ngFor="let route of routes">
+      <span class="item-and-icon">
+        <img class="icon" [src]="route.iconUrl" alt="">
+        <span class="title">
+          {{route.routeName}}
+        </span>
+      </span>
+      <span *ngIf="myTasks && route.route==='my-tasks'" class="count">
+        {{myTasks}}
+      </span>
+      <span *ngIf="activity && route.route==='activities'" class="count">
+        {{activity}}
+      </span>
+      <span *ngIf="messages && route.route==='messages'" class="count">
+        {{messages}}
+      </span>
+    </li>
+      <li class="list sub-titles">Recent projects</li>
+      <li class="list" *ngFor="let recentProject of recentProjects">
+        <span class="item-and-icon">
+        <img class="icon" [src]="recentProject.iconUrl" alt="">
+        <span class="title">
+          {{recentProject.title}}
+        </span>
+      </span>
+      </li>
+    </ul>
+  </div>
+</div>
