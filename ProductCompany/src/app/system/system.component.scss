@@ -3,11 +3,23 @@
   justify-content: space-between;
   .sidenav{
     width: 280px;
+    transition: all .5s;
+    &.show-and-hide{
+      transform: translateX(-200px);
+    }
   }
   .project-details-side{
     width: 320px;
   }
   .outlet{
     width: 100%;
+  }
+  @media(max-width: 991px){
+    .sidenav{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+    }
   }
 }

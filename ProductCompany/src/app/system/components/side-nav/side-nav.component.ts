@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {SidenavRoutes} from './sidenav-routes'
 import {RouteI} from "../../../core/interfaces/route-i";
 import {ProjectI} from "../../../core/interfaces/project-i";
@@ -13,6 +13,8 @@ export class SideNavComponent implements OnInit {
   @Input() activity = 5;
   @Input() messages = 5;
   @Input() recentProjects!: ProjectI[];
+  @Output() showAndHideNavBar = new EventEmitter<boolean>();
+  isShowNavBar = false;
   routes: RouteI[] = SidenavRoutes;
   constructor(
     private projectService: ProjectService
@@ -26,4 +28,8 @@ export class SideNavComponent implements OnInit {
     this.recentProjects = this.projectService.getAllProjects()
   }
 
+  hideAndOpenSideNav() {
+    this.isShowNavBar = !this.isShowNavBar;
+    this.showAndHideNavBar.emit(this.isShowNavBar)
+  }
 }

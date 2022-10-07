@@ -1,6 +1,6 @@
 <div class="system">
-<div class="sidenav">
-<app-side-nav></app-side-nav>
+<div [class.show-and-hide]="isShowNavBar" class="sidenav">
+<app-side-nav (showAndHideNavBar)="showAndHideNavBar($event)"></app-side-nav>
 </div>
 <div class="outlet">
   <router-outlet></router-outlet>

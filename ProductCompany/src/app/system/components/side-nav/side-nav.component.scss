@@ -13,8 +13,25 @@
   height: 100vh;
   border-right: 1px solid #ffffff3b;
   .header{
+    position: relative;
     padding: 15px;
     border-bottom: 1px solid #ffffff3b;
+    .arrow-side{
+      display: none;
+      width: 30px;
+      height: 30px;
+      background: #0165f9;
+      border-radius: 4px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(20px, 20px);
+      text-align: center;
+      padding-top: 4px;
+      .icon{
+        width: 12px;
+      }
+    }
   }
   .content{
     height: auto;
@@ -25,6 +42,9 @@
       margin: 0;
       padding: 0 0 15px;
       border-bottom: 1px solid;
+      &:last-child{
+        border-bottom: 0;
+      }
       .list{
         padding: 0 15px;
         display: flex;
@@ -71,5 +91,11 @@
       }
     }
   }
-
+@media(max-width: 991px){
+  .header{
+    .arrow-side{
+      display: block;
+    }
+  }
+}
 }
