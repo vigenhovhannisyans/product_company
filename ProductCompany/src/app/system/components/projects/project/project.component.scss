@@ -91,7 +91,15 @@
     margin-top: 30px;
     border-bottom: 1px solid #ffffff3b;
     padding-bottom: 5px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    height: 29px;
     .links{
+      height: fit-content;
       text-decoration: none;
       color: #FFFFFFA6;
       font-size: 14px;
@@ -129,6 +137,11 @@
   ::ng-deep {
     .mat-raised-button {
       background-color: #0165f9;
+    }
+  }
+  @media(max-width: 767px){
+    .outlet{
+      overflow: auto;
     }
   }
   @media(max-width: 455px){

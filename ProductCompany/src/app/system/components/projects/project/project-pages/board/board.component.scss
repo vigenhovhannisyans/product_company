@@ -1,3 +1,23 @@
+/* width */
+.board::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+.board::-webkit-scrollbar-thumb {
+  background: #0165F9;
+  border-radius: 10px;
+}
+/* width */
+.block-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+.block-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
 .board {
   display: flex;
   justify-content: space-between;
@@ -55,8 +75,8 @@
     .block-body {
       overflow-y: auto;
       position: relative;
-      height: 100vh;
-      padding: 15px 30px;
+      height: 60vh;
+      padding: 15px 30px 60px;
 
       .new-task {
         //margin: 15px 20px 16px;
@@ -97,8 +117,6 @@
           .top-side {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-
             .category {
               border-radius: 38px;
               padding: 2px 20px;
@@ -111,12 +129,18 @@
             .more {
               display: flex;
               align-items: center;
+              flex-wrap: wrap;
+
+              .category {
+                margin-bottom: 10px;
+              }
 
               .complexity {
                 border-radius: 38px;
                 padding: 2px 20px;
                 width: max-content;
                 margin-right: 10px;
+                margin-bottom: 10px;
 
                 &.hard {
                   background: #FF4A5633;
@@ -194,38 +218,45 @@
             align-items: center;
 
             .users {
-
+              margin-bottom: 10px;
             }
 
             .attachment-side {
               display: flex;
               align-items: center;
-              .attachment{
+
+              .attachment {
                 margin-right: 10px;
                 display: flex;
                 align-items: center;
                 color: #FFFFFFA6;
-                .icon{
+
+                .icon {
                   margin-right: 5px;
                   width: 16px;
                   height: 16px;
                 }
               }
-              .circle{
+
+              .circle {
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
                 position: relative;
-                &.green{
+
+                &.green {
                   background-color: #25C678;
                 }
-                &.yellow{
+
+                &.yellow {
                   background-color: #EFD750;
                 }
-                &.red{
+
+                &.red {
                   background-color: #FF4A56;
                 }
-                .empty{
+
+                .empty {
                   display: block;
                   width: 13px;
                   height: 13px;
@@ -241,6 +272,33 @@
           }
         }
       }
+    }
+  }
+  @media(max-width: 991px) {
+    .blocks{
+      .block-body{
+        padding: 15px 12px 60px;
+        .task{
+          position: relative;
+          .desc-and-more-side{
+            .users-and-attachment{
+              flex-direction: column;
+              align-items: baseline;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media(max-width: 767px){
+    flex-direction: column;
+    overflow: auto;
+    position: relative;
+    height: 100vh;
+    padding-bottom: 100%;
+    .blocks{
+      width: 100%;
+      margin-bottom: 30px;
     }
   }
 }
