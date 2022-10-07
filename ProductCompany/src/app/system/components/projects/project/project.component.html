@@ -28,10 +28,10 @@
   </div>
 
   <nav routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="navigation">
-    <a routerLinkActive="active-link" routerLink="/system/projects/project/overview" class="links" href="">OverView
+    <a routerLinkActive="active-link" routerLink="/system/projects/project/statistic" class="links">Statistic
     <span class="active-line"></span>
     </a>
-    <a routerLinkActive="active-link" routerLink="/system/projects/project" class="links">Boards
+    <a routerLinkActive="active-link" routerLink="/system/projects/project/board" class="links">Boards
     <span class="active-line"></span>
     </a>
     <a routerLinkActive="active-link" routerLink="/system/projects/project/timeline" class="links">Timeline
@@ -42,6 +42,9 @@
     </a>
   </nav>
   <div class="outlet">
+    <div class="route">
   <router-outlet></router-outlet>
+    </div>
   </div>
+
 </div>

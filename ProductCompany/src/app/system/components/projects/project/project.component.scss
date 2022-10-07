@@ -94,7 +94,7 @@
     position: relative;
     width: 100%;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     flex-wrap: nowrap;
     height: 29px;
@@ -132,7 +132,9 @@
     }
   }
 .outlet{
-  overflow: hidden;
+  .route{
+    width: 100%;
+  }
 }
   ::ng-deep {
     .mat-raised-button {

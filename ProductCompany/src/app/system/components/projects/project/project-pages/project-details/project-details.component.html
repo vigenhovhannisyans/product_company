@@ -1,0 +1,43 @@
+<div class="project-details">
+  <span class="title">Project Stats</span>
+  <div class="chart-and-info">
+  <div class="chart">
+    <canvas baseChart
+            [data]="pieChartData"
+            [type]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins">
+    </canvas>
+  </div>
+  <span class="complete">
+    <img class="icon" src="../../../../../../../assets/images/icons/attention.svg" alt="">
+    <span class="text">You completed <span class="green">3% more</span> tasks this week than last week</span>
+  </span>
+  </div>
+  <div class="recent-activity">
+    <div class="title">Recent Activities</div>
+
+    <div class="activity-side">
+      <div class="user">
+        <div class="image-and-name">
+          <img class="image" src="../../../../../../../assets/images/icons/jacob.svg" alt="">
+          <span class="name">Jacob Jones</span>
+          <span class="time">4 min ago</span>
+        </div>
+        <div class="message-side">
+          <p class="message">Completed the <span class="strong">Create Primary Button for home page </span> task.</p>
+        </div>
+      </div>
+      <div class="user">
+        <div class="image-and-name">
+          <img class="image" src="../../../../../../../assets/images/icons/jacob.svg" alt="">
+          <span class="name">Jacob Jones</span>
+          <span class="time">4 min ago</span>
+        </div>
+        <div class="message-side">
+          <p class="message">Completed the <span class="strong">Create Primary Button for home page </span> task.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
