@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {SystemComponent} from "./system.component";
+import {ProjectsComponent} from "./components/projects/projects.component";
 
 const routes: Routes = [
-  {path: '', component: SystemComponent}
+  {path: '', redirectTo:'projects', pathMatch:'full'},
+  {path:'projects', loadChildren:()=> import('./components/projects/projects.module').then(m => m.ProjectsModule )}
 ];
 
 @NgModule({

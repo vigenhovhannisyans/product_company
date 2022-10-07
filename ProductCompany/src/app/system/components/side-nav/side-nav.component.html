@@ -6,7 +6,7 @@
       </span>
   </div>
   <div class="content">
-    <ul class="nav-ul">
+    <ul  class="nav-ul">
       <li class="list">
       <span class="item-and-icon">
         <img class="icon" src="../../../../assets/images/icons/my-task.svg" alt="">
@@ -30,9 +30,9 @@
       </span>
       </li>
     </ul>
-    <ul class="nav-ul">
+    <ul routerLinkActive="active-route" [routerLinkActiveOptions]="{exact:true}" class="nav-ul">
       <li class="list sub-titles">Main</li>
-    <li class="list" *ngFor="let route of routes">
+    <li routerLinkActive="active-route" [routerLink]="route.route" class="list" *ngFor="let route of routes">
       <span class="item-and-icon">
         <img class="icon" [src]="route.iconUrl" alt="">
         <span class="title">

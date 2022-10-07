@@ -1,4 +1,5 @@
 .sidenav{
+  z-index: 9999;
   /* width */
   .content::-webkit-scrollbar {
     width: 5px;
@@ -53,6 +54,9 @@
         height: 43px;
         transition: all .5s;
         margin-top: 10px;
+        &.active-route{
+          background-color: rgba(255, 255, 255, 0.1);
+      }
         &.sub-titles{
           color: #FFFFFFA6;
           pointer-events: none;

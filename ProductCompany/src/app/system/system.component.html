@@ -2,10 +2,18 @@
 <div [class.show-and-hide]="isShowNavBar" class="sidenav">
 <app-side-nav (showAndHideNavBar)="showAndHideNavBar($event)"></app-side-nav>
 </div>
-<div class="outlet">
-  <router-outlet></router-outlet>
-</div>
-<div class="project-details-side">
-  <app-project-details></app-project-details>
-</div>
+  <div class="header-and-outlet">
+  <div class="header">
+  <app-header></app-header>
+  </div>
+    <div class="project-and-outlet">
+      <div class="outlet">
+        <router-outlet></router-outlet>
+      </div>
+      <!--<div class="project-side">-->
+      <!--<app-project-details></app-project-details>-->
+      <!--</div>-->
+    </div>
+
+  </div>
 </div>
