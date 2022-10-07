@@ -1,0 +1,246 @@
+.board {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  .blocks {
+    width: 33%;
+    background: rgb(255 255 255 / 4%);
+
+    .header {
+      padding: 0 30px;
+      background-color: #121315;
+      height: 50px;
+      border: 1px solid #ffffff3b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+        color: #FFFFFFA6;
+        display: flex;
+
+        .total {
+          margin-left: 10px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
+          width: 27px;
+          height: 20px;
+          text-align: center;
+          display: block;
+        }
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+
+        .action {
+          width: 20px;
+          height: 20px;
+          display: block;
+          text-align: center;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .plus {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .block-body {
+      overflow-y: auto;
+      position: relative;
+      height: 100vh;
+      padding: 15px 30px;
+
+      .new-task {
+        //margin: 15px 20px 16px;
+        width: max-content;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .icon {
+          margin-right: 5px;
+        }
+
+        color: #FFFFFFD9;
+        font-size: 14px;
+      }
+
+      .task {
+        padding: 16px;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        height: max-content;
+        width: 100%;
+
+        .task-img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 14px;
+        }
+
+        .task-content {
+          margin-top: 15px;
+
+          .top-side {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .category {
+              border-radius: 38px;
+              padding: 2px 20px;
+              width: max-content;
+              background: rgba(255, 255, 255, 0.1);
+              color: #FFFFFFA6;
+              margin-right: 10px;
+            }
+
+            .more {
+              display: flex;
+              align-items: center;
+
+              .complexity {
+                border-radius: 38px;
+                padding: 2px 20px;
+                width: max-content;
+                margin-right: 10px;
+
+                &.hard {
+                  background: #FF4A5633;
+                  color: #FF4A56;
+                }
+
+                &.low {
+                  color: #25C678;
+                  background: rgba(37, 198, 120, 0.1);
+                }
+
+                &.medium {
+                  color: #EFD750;
+                  background: rgba(239, 215, 80, 0.2);
+                }
+              }
+            }
+
+            .edit-side {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.1);
+              text-align: center;
+              padding: 5px;
+
+              &:hover {
+                cursor: pointer;
+              }
+
+              .icon {
+                width: 17px;
+                height: 17px;
+
+              }
+            }
+          }
+        }
+
+        .desc-and-more-side {
+          margin-top: 20px;
+
+          .title {
+            color: white;
+            font-weight: 500;
+            font-size: 17px;
+          }
+
+          .description {
+            margin-top: 10px;
+            font-weight: 500;
+            color: #FFFFFFA6;
+          }
+
+          .date-side {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            margin-top: 20px;
+
+            .icon {
+              width: 16px;
+              height: 16px;
+              margin-right: 5px;
+            }
+
+            .date {
+              color: #FFFFFFA6;
+            }
+          }
+
+          .users-and-attachment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .users {
+
+            }
+
+            .attachment-side {
+              display: flex;
+              align-items: center;
+              .attachment{
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+                color: #FFFFFFA6;
+                .icon{
+                  margin-right: 5px;
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+              .circle{
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                position: relative;
+                &.green{
+                  background-color: #25C678;
+                }
+                &.yellow{
+                  background-color: #EFD750;
+                }
+                &.red{
+                  background-color: #FF4A56;
+                }
+                .empty{
+                  display: block;
+                  width: 13px;
+                  height: 13px;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  background-color: #272829;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

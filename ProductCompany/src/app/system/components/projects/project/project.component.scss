@@ -1,17 +1,6 @@
 .project {
   .project-path {
     color: #FFFFFFA6;
-
-    .path {
-      &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-
-      &:last-child {
-        pointer-events: none;
-      }
-    }
   }
 
   .project-name-and-actions {
@@ -98,7 +87,45 @@
       }
     }
   }
-
+  .navigation{
+    margin-top: 30px;
+    border-bottom: 1px solid #ffffff3b;
+    padding-bottom: 5px;
+    .links{
+      text-decoration: none;
+      color: #FFFFFFA6;
+      font-size: 14px;
+      margin-right: 32px;
+      position: relative;
+      transition: all .5s;
+      &.active-link{
+        color: white;
+        .active-line{
+          width: 100%;
+        }
+      }
+      &:hover{
+        color: white;
+        .active-line{
+          width: 100%;
+        }
+      }
+      .active-line{
+        transform: translateY(8px);
+        border-radius: 4px;
+        width: 0;
+        transition: all .5s;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: #0165F9;
+      }
+    }
+  }
+.outlet{
+  overflow: hidden;
+}
   ::ng-deep {
     .mat-raised-button {
       background-color: #0165f9;

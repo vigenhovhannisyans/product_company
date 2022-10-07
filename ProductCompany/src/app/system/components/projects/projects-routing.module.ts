@@ -4,8 +4,8 @@ import {ProjectComponent} from "./project/project.component";
 import {ProjectsComponent} from "./projects.component";
 
 const routes: Routes = [
-  {path: '', component: ProjectsComponent},
-  {path: 'project', component: ProjectComponent},
+  {path: '',  pathMatch:'full', component: ProjectsComponent},
+  {path: 'project', component: ProjectComponent, loadChildren: ()=> import('./project/project.module').then(m => m.ProjectModule)},
 ];
 
 @NgModule({

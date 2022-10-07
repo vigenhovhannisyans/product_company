@@ -8,18 +8,21 @@ export class ProjectService {
   projects: ProjectI[] =[
     {
       id: 1,
-      iconUrl: '../../../../assets/images/icons/box.svg',
-      title: 'Way Finder'
+      iconUrl: '../../../../assets/images/icons/project-logo.png',
+      title: 'Way Finder',
+      routerPath: 'system/projects/project'
     },
     {
       id: 2,
-      iconUrl: '../../../../assets/images/icons/3d-cube-scan.svg',
-      title: 'Internal Project'
+      iconUrl: '../../../../assets/images/icons/project-logo.png',
+      title: 'Internal Project',
+      routerPath: '/system/projects/project'
     },
     {
       id: 3,
-      iconUrl: '../../../../assets/images/icons/3d-square.svg',
-      title: 'Bitly Landing'
+      iconUrl: '../../../../assets/images/icons/project-logo.png',
+      title: 'Bitly Landing',
+      routerPath: '/system/projects/project'
     },
   ];
   constructor() { }
@@ -27,5 +30,10 @@ export class ProjectService {
   getAllProjects(): ProjectI[]{
 
     return this.projects;
+  }
+
+  getProjectById(id: number): ProjectI{
+    console.log(typeof id);
+    return this.projects.filter(project => project.id === id)[0];
   }
 }

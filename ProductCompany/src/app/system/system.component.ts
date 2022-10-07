@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PathService} from "../core/services/path.service";
 
 @Component({
   selector: 'app-system',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SystemComponent implements OnInit {
   isShowNavBar = false;
-  constructor() { }
+  constructor(
+    private pathService: PathService,
+  ) { }
 
   ngOnInit(): void {
+    this.pathService.addPath('system')
   }
 
   showAndHideNavBar(event: boolean) {

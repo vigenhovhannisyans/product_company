@@ -24,6 +24,9 @@
       background: #121315;
     }
     .project-and-outlet{
+      overflow-y: auto;
+      position: relative;
+      height: 100%;
       padding: 30px;
       display: flex;
       justify-content: space-between;

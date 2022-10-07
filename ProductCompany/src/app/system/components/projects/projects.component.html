@@ -1,1 +1,8 @@
-<a routerLink="project">aaaaaaaaaaaaa</a>
+<div class="projects">
+<ul class="projects-ul">
+  <li (click)="addProjectName(project.title, project.routerPath, project.id)" *ngFor="let project of allProjects" class="list">
+    <img class="project-icon" [src]="project.iconUrl" alt="">
+    <span class="project-title">{{project.title}}</span>
+  </li>
+</ul>
+</div>
