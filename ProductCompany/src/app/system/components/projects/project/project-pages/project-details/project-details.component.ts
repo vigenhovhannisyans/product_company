@@ -1,7 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import {CheckIsMobileService} from "../../../../../../core/services/check-is-mobile.service";
 
 @Component({
   selector: 'app-project-details',
@@ -10,7 +11,11 @@ import { BaseChartDirective } from 'ng2-charts';
 })
 export class ProjectDetailsComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-  constructor() { }
+  public pieChartType: ChartType = 'bar';
+  public pieChartPlugins = [ DatalabelsPlugin ];
+  constructor(
+    private isMobileService: CheckIsMobileService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -20,15 +25,9 @@ export class ProjectDetailsComponent implements OnInit {
     plugins: {
       legend: {
         display: false,
-        position: 'top',
+        position: 'bottom',
       },
-      datalabels: {
-        formatter: (value, ctx) => {
-          if (ctx.chart.data.labels) {
-            return ctx.chart.data.labels[ctx.dataIndex];
-          }
-        },
-      },
+
     }
   };
   public pieChartData: ChartData<'bar', number[], string | string[]> = {
@@ -46,7 +45,8 @@ export class ProjectDetailsComponent implements OnInit {
       ],
     } ],
   };
-  public pieChartType: ChartType = 'bar';
-  public pieChartPlugins = [ DatalabelsPlugin ];
 
+  isMobile(): boolean{
+    return this.isMobileService.isMobile();
+  }
 }

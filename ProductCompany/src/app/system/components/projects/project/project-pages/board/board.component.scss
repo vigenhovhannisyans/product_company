@@ -22,7 +22,193 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  overflow-x: hidden;
+  .task {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none !important;
+    padding: 16px;
+    margin-top: 20px;
+    background: rgb(63, 63, 63);
+    border-radius: 8px;
+    height: max-content;
+    width: max-content;
+    &:hover{
+      cursor: all-scroll;
+    }
+    .task-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
 
+    .task-content {
+      margin-top: 15px;
+
+      .top-side {
+        display: flex;
+        justify-content: space-between;
+        .category {
+          border-radius: 38px;
+          padding: 2px 20px;
+          width: max-content;
+          background: rgba(255, 255, 255, 0.1);
+          color: #FFFFFFA6;
+          margin-right: 10px;
+        }
+
+        .more {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .category {
+            margin-bottom: 10px;
+          }
+
+          .complexity {
+            border-radius: 38px;
+            padding: 2px 20px;
+            width: max-content;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            &.hard {
+              background: #FF4A5633;
+              color: #FF4A56;
+            }
+
+            &.low {
+              color: #25C678;
+              background: rgba(37, 198, 120, 0.1);
+            }
+
+            &.medium {
+              color: #EFD750;
+              background: rgba(239, 215, 80, 0.2);
+            }
+          }
+        }
+
+        .edit-side {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          text-align: center;
+          padding: 5px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .icon {
+            width: 17px;
+            height: 17px;
+
+          }
+        }
+      }
+    }
+
+    .desc-and-more-side {
+      margin-top: 20px;
+
+      .title {
+        color: white;
+        font-weight: 500;
+        font-size: 17px;
+      }
+
+      .description {
+        margin-top: 10px;
+        font-weight: 500;
+        color: #FFFFFFA6;
+      }
+
+      .date-side {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-top: 20px;
+
+        .icon {
+          width: 16px;
+          height: 16px;
+          margin-right: 5px;
+        }
+
+        .date {
+          color: #FFFFFFA6;
+        }
+      }
+
+      .users-and-attachment {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .users {
+          margin-bottom: 10px;
+        }
+
+        .attachment-side {
+          display: flex;
+          align-items: center;
+
+          .attachment {
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFFA6;
+
+            .icon {
+              margin-right: 5px;
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+          .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+
+            &.green {
+              background-color: #25C678;
+            }
+
+            &.yellow {
+              background-color: #EFD750;
+            }
+
+            &.red {
+              background-color: #FF4A56;
+            }
+
+            .empty {
+              display: block;
+              width: 13px;
+              height: 13px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              background-color: #272829;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
   .blocks {
     width: 33%;
     background: rgb(255 255 255 / 4%);
@@ -97,13 +283,24 @@
       }
 
       .task {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        outline: none !important;
         padding: 16px;
         margin-top: 20px;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 8px;
         height: max-content;
         width: 100%;
-
+        transform: translate3d(0,0,0);
+        &:hover{
+          cursor: all-scroll;
+        }
         .task-img {
           width: 100%;
           height: 200px;

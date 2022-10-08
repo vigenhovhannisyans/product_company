@@ -35,7 +35,7 @@
       margin-top: 20px;
       display: flex;
       color: rgba(255, 255, 255, 0.45);
-
+      align-items: center;
       .icon {
         width: 25px;
         height: 25px;
@@ -83,6 +83,7 @@
           }
         }
         .message-side{
+          margin-top: 5px;
           .message{
             color: #FFFFFF73;
             font-size: 14px;
@@ -94,6 +95,13 @@
           }
         }
       }
+    }
+  }
+  @media(max-width: 991px){
+    .chart-and-info{
+      .chart{
+      width: 90%;
+    }
     }
   }
 }
