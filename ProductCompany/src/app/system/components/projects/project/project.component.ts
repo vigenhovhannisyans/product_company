@@ -38,7 +38,6 @@ export class ProjectComponent implements OnInit {
   getProjectById(id: number): void{
     this.project =  this.projectService.getProjectById(id);
     this.projectTitle = this.project.title;
-    console.log(this.project);
   }
 
 }

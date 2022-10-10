@@ -61,9 +61,9 @@ export class BoardComponent implements OnInit, AfterViewInit {
         fromEvent(elem.nativeElement, 'mouseover').pipe(
           takeUntil(this.mouseOutSubject$)
         ).subscribe((res: MouseEvent | any) => {
-          console.log(mouseUp);
-          console.log(res.fromElement, 'fromElement');
-          console.log(res.toElement, 'toElement');
+          console.log('jocooo')
+          const toElement = res.toElement.getBoundingClientRect();
+          res.fromElement.style.transform = `translate(${toElement.x  - 243}px,${toElement.y -89}px)`;
           this.mouseOutSubject$.next(true)
         })
       })
