@@ -13,9 +13,14 @@ import {ComplexityE} from "../../../../../../core/enums/complexityE";
 export class BoardComponent implements OnInit, AfterViewInit {
   @ViewChildren('task') task!: QueryList<ElementRef>;
   @ViewChild('board') board!: ElementRef;
-  @ViewChildren('taskBlock') taskBlock!: QueryList<ElementRef>;
+  @ViewChild('toDo') toDo!: ElementRef;
+  @ViewChild('inProgress') inProgress!: ElementRef;
+  @ViewChild('underReview') underReview!: ElementRef;
+  @ViewChild('done') done!: ElementRef;
   mouseOutSubject$ = new Subject<boolean>();
   toDoTasks!: TaskI[];
+  inProgressTasks!: TaskI[];
+  underReviewTasks!: TaskI[];
   complexity!: ComplexityE;
   selectedOption!: number;
 
@@ -60,23 +65,27 @@ export class BoardComponent implements OnInit, AfterViewInit {
       takeUntil(this.mouseOutSubject$)
     ).subscribe((res: MouseEvent | any) => {
       this.mouseOutSubject$.next(true);
-      this.taskBlock.forEach(taskBlock => {
-        if(res.screenX >= 280 && res.screenX<=620){
-            console.log('inside of to do')
-        }else if(res.screenX >= 685 && res.screenX<=1070) {
+        if(res.screenX >= 280 && res.screenX <= 620){
+          this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.TO_DO);
+          console.log('inside of to do')
+        }else if(res.screenX >= 685 && res.screenX <= 1070) {
+          this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.IN_PROGRESS);
           console.log('inside of in progress')
-        }else if(res.screenX >= 1100 && res.screenX<=1474){
+        }else if(res.screenX >= 1100 && res.screenX <= 1474){
+          this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.REVIEW);
           console.log('inside of under review')
-        }else if(res.screenX>=1496 && res.screenX <=1880) {
+        }else if(res.screenX >= 1496 && res.screenX <= 1880) {
+          this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.DONE);
           console.log('inside of done')
         }
 
-      })
     })
   }
 
   fetchTasks(): void {
     this.toDoTasks = this.taskService.getTasksByStatus(TaskStatusE.TO_DO);
+    this.inProgressTasks = this.taskService.getTasksByStatus(TaskStatusE.IN_PROGRESS);
+    this.underReviewTasks = this.taskService.getTasksByStatus(TaskStatusE.REVIEW);
   }
 
   public get getComplexityStatus(): typeof ComplexityE {
@@ -98,5 +107,10 @@ export class BoardComponent implements OnInit, AfterViewInit {
 
   onClickedOutside() {
     this.selectedOption = -1
+  }
+
+  getTaskByIdAndChangeStatus(id: number, status: TaskStatusE): void{
+    this.taskService.getTaskByIdAndChangeStatus(+id, status);
+    this.fetchTasks()
   }
 }

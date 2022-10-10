@@ -33,7 +33,6 @@ export class ProjectService {
   }
 
   getProjectById(id: number): ProjectI{
-    console.log(typeof id);
     return this.projects.filter(project => project.id === id)[0];
   }
 }

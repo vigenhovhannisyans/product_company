@@ -54,10 +54,10 @@ export class TaskService {
         this.filteredTask = this.getTaskByStatus(status);
         break;
       case TaskStatusE.IN_PROGRESS:
-        console.log('in progress');
+        this.filteredTask = this.getTaskByStatus(status);
         break;
       case TaskStatusE.REVIEW:
-        console.log('under review');
+        this.filteredTask = this.getTaskByStatus(status);
         break;
       case TaskStatusE.DONE:
         console.log('done');
@@ -67,5 +67,12 @@ export class TaskService {
 
   getTaskByStatus(status: TaskStatusE): TaskI[]{
     return this.tasks.filter(task => task.status === status)
+  }
+
+  getTaskByIdAndChangeStatus(id: number, status: TaskStatusE): TaskI{
+    const task = this.tasks.filter(task => task.id === id)[0];
+    task.status = status;
+    console.log(this.tasks);
+    return task
   }
 }
