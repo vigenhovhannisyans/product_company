@@ -56,16 +56,21 @@ export class BoardComponent implements OnInit, AfterViewInit {
 
   detectMouseUp(block: ElementRef): void {
     const draggedBlock = block.nativeElement;
-    fromEvent(draggedBlock, 'mouseup').subscribe((mouseUp) => {
-      this.taskBlock.forEach(elem => {
-        fromEvent(elem.nativeElement, 'mouseover').pipe(
-          takeUntil(this.mouseOutSubject$)
-        ).subscribe((res: MouseEvent | any) => {
-          console.log('jocooo')
-          const toElement = res.toElement.getBoundingClientRect();
-          res.fromElement.style.transform = `translate(${toElement.x  - 243}px,${toElement.y -89}px)`;
-          this.mouseOutSubject$.next(true)
-        })
+    fromEvent(draggedBlock, 'mouseup').pipe(
+      takeUntil(this.mouseOutSubject$)
+    ).subscribe((res: MouseEvent | any) => {
+      this.mouseOutSubject$.next(true);
+      this.taskBlock.forEach(taskBlock => {
+        if(res.screenX >= 280 && res.screenX<=620){
+            console.log('inside of to do')
+        }else if(res.screenX >= 685 && res.screenX<=1070) {
+          console.log('inside of in progress')
+        }else if(res.screenX >= 1100 && res.screenX<=1474){
+          console.log('inside of under review')
+        }else if(res.screenX>=1496 && res.screenX <=1880) {
+          console.log('inside of done')
+        }
+
       })
     })
   }
