@@ -1,7 +1,8 @@
 <div #board class="board">
-  <div #taskBlock class="blocks">
+
+  <div  #taskBlock class="blocks">
     <div class="header">
-      <span class="title">To Do <span class="total">42</span></span>
+      <span class="title">To Do <span class="total">{{toDoTasks.length}}</span></span>
       <div class="actions">
         <span class="plus action">
           <img src="../../../../../../../assets/images/icons/plus.svg" alt="">
@@ -11,80 +12,36 @@
         </span>
       </div>
     </div>
-    <div #blockBody class="block-body">
+    <div id="toDo" #blockBody class="block-body">
       <span class="new-task">
         <img class="icon" src="../../../../../../../assets/images/icons/plus.svg" alt="">
-        New Task
+        New TaskI
       </span>
-      <div #task class="task">
-        <img class="task-img" src="../../../../../../../assets/images/icons/task-img.svg" alt="">
+      <div id="{{task.id}}" *ngFor="let task of toDoTasks; let i = index" #task class="task">
+        <img *ngIf="task.taskImageURL" class="task-img" [src]="task.taskImageURL" alt="">
         <div class="task-content">
           <div class="top-side">
-          <div class="more">
-            <span class="complexity hard">High</span>
-            <span class="category">Copy Writing</span>
-          </div>
-          <div class="edit-side">
-            <img class="icon" src="../../../../../../../assets/images/icons/dots.svg" alt="">
-          </div>
-          </div>
-        </div>
-        <div class="desc-and-more-side">
-          <span class="title">Copy for Onboarding Screens</span>
-          <p class="description">
-            Engaging and welcoming tone of voice
-            for new and existing users
-          </p>
-          <div class="date-side">
-            <img class="icon" src="../../../../../../../assets/images/icons/calendar-task.svg" alt="">
-            <span class="date">JAN 28</span>
-          </div>
-
-          <div class="users-and-attachment">
-            <div class="users">
-              <img class="icon" src="../../../../../../../assets/images/icons/small-person.svg" alt="">
-              <img class="icon" src="../../../../../../../assets/images/icons/user-small-1.svg" alt="">
-              <img class="icon" src="../../../../../../../assets/images/icons/user-small-2.svg" alt="">
+            <div class="more">
+              <span
+                [ngClass]="{'hard': task.complexity === getComplexityStatus.HARD,'low': task.complexity === getComplexityStatus.EASY, 'medium': task.complexity === getComplexityStatus.MEDIUM}"
+                class="complexity">Hard</span>
+              <span *ngFor="let category of task.category" class="category">{{category}}</span>
             </div>
-            <div class="attachment-side">
-              <span class="attachment">
-                <img class="icon" src="../../../../../../../assets/images/icons/attachment.svg" alt="">
-                42
-              </span>
-              <span class="attachment">
-                <img class="icon" src="../../../../../../../assets/images/icons/chat.svg" alt="">
-                42
-              </span>
-
-              <div class="circle red">
-                <span class="empty"></span>
+            <div (clickOutside)="onClickedOutside()" (click)="showAndHideEditBlock($event,i)" class="edit-side">
+              <img class="icon" src="../../../../../../../assets/images/icons/dots.svg" alt="">
+              <div (click)="$event.stopPropagation()" [class.show]="selectedOption === i" class="edit-remove">
+                  <span (click)="editTask(task)" class="action">Edit</span>
+                  <span (click)="removeTask(task)" class="action">Remove</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div #task class="task">
-        <div class="task-content">
-          <div class="top-side">
-            <div class="more">
-              <span class="complexity medium">Medium</span>
-              <span class="category">Review</span>
-              <span class="category">Design</span>
-            </div>
-            <div class="edit-side">
-              <img class="icon" src="../../../../../../../assets/images/icons/dots.svg" alt="">
-            </div>
-          </div>
-        </div>
         <div class="desc-and-more-side">
-          <span class="title">Copy for Onboarding Screens</span>
-          <p class="description">
-            Engaging and welcoming tone of voice
-            for new and existing users
-          </p>
+          <span class="title">{{task.title}}</span>
+          <p class="description">{{task.description}}</p>
           <div class="date-side">
             <img class="icon" src="../../../../../../../assets/images/icons/calendar-task.svg" alt="">
-            <span class="date">JAN 28</span>
+            <span class="date">{{task.date | date}}</span>
           </div>
 
           <div class="users-and-attachment">
@@ -96,14 +53,11 @@
             <div class="attachment-side">
               <span class="attachment">
                 <img class="icon" src="../../../../../../../assets/images/icons/attachment.svg" alt="">
-                42
+                {{task.attachedCount}}
               </span>
-              <span class="attachment">
-                <img class="icon" src="../../../../../../../assets/images/icons/chat.svg" alt="">
-                42
-              </span>
-
-              <div class="circle red">
+              <div
+                [ngClass]="{'red': task.complexity === getComplexityStatus.HARD,'green': task.complexity === getComplexityStatus.EASY,'yellow': task.complexity === getComplexityStatus.MEDIUM}"
+                class="circle">
                 <span class="empty"></span>
               </div>
             </div>
@@ -112,7 +66,8 @@
       </div>
     </div>
   </div>
-  <div #taskBlock class="blocks">
+
+  <div  #taskBlock class="blocks">
     <div class="header">
       <span class="title">In Progress <span class="total">42</span></span>
       <div class="actions">
@@ -124,10 +79,10 @@
         </span>
       </div>
     </div>
-    <div #blockBody class="block-body">
+    <div id="inProgress" #blockBody class="block-body">
       <span class="new-task">
         <img class="icon" src="../../../../../../../assets/images/icons/plus.svg" alt="">
-        New Task
+        New TaskI
       </span>
       <div #task class="task">
         <div class="task-content">
@@ -178,7 +133,8 @@
       </div>
     </div>
   </div>
-  <div #taskBlock class="blocks">
+
+  <div  #taskBlock class="blocks">
     <div class="header">
       <span class="title">Review <span class="total">42</span></span>
       <div class="actions">
@@ -190,10 +146,77 @@
         </span>
       </div>
     </div>
-    <div #blockBody class="block-body">
+    <div id="underReview" #blockBody class="block-body">
       <span class="new-task">
         <img class="icon" src="../../../../../../../assets/images/icons/plus.svg" alt="">
-        New Task
+        New TaskI
+      </span>
+      <div #task class="task">
+        <div class="task-content">
+          <div class="top-side">
+            <div class="more">
+              <span class="complexity medium">Medium</span>
+              <span class="category">Copy Writing</span>
+              <span class="category">Wireframing</span>
+            </div>
+            <div class="edit-side">
+              <img class="icon" src="../../../../../../../assets/images/icons/dots.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="desc-and-more-side">
+          <span class="title">Copy for Onboarding Screens</span>
+          <p class="description">
+            Engaging and welcoming tone of voice
+            for new and existing users
+          </p>
+          <div class="date-side">
+            <img class="icon" src="../../../../../../../assets/images/icons/calendar-task.svg" alt="">
+            <span class="date">JAN 28</span>
+          </div>
+
+          <div class="users-and-attachment">
+            <div class="users">
+              <img class="icon" src="../../../../../../../assets/images/icons/small-person.svg" alt="">
+              <img class="icon" src="../../../../../../../assets/images/icons/user-small-1.svg" alt="">
+              <img class="icon" src="../../../../../../../assets/images/icons/user-small-2.svg" alt="">
+            </div>
+            <div class="attachment-side">
+              <span class="attachment">
+                <img class="icon" src="../../../../../../../assets/images/icons/attachment.svg" alt="">
+                42
+              </span>
+              <span class="attachment">
+                <img class="icon" src="../../../../../../../assets/images/icons/chat.svg" alt="">
+                42
+              </span>
+
+              <div class="circle yellow">
+                <span class="empty"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div  #taskBlock class="blocks">
+    <div class="header">
+      <span class="title">Done <span class="total">42</span></span>
+      <div class="actions">
+        <span class="plus">
+          <img src="../../../../../../../assets/images/icons/plus.svg" alt="">
+        </span>
+        <span class="dots">
+          <img src="../../../../../../../assets/images/icons/dots.svg" alt="">
+        </span>
+      </div>
+    </div>
+    <div id="done" #blockBody class="block-body">
+      <span class="new-task">
+        <img class="icon" src="../../../../../../../assets/images/icons/plus.svg" alt="">
+        New TaskI
       </span>
       <div #task class="task">
         <div class="task-content">

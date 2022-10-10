@@ -1,6 +1,9 @@
 import {AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
-import {fromEvent, exhaustMap, takeUntil} from 'rxjs';
-import {Subject} from "rxjs";
+import {exhaustMap, fromEvent, Subject, takeUntil} from 'rxjs';
+import {TaskService} from "../../../../../../core/services/task.service";
+import {TaskStatusE} from "../../../../../../core/enums/task-status-e";
+import {TaskI} from "../../../../../../core/interfaces/task-i";
+import {ComplexityE} from "../../../../../../core/enums/complexityE";
 
 @Component({
   selector: 'app-board',
@@ -12,11 +15,17 @@ export class BoardComponent implements OnInit, AfterViewInit {
   @ViewChild('board') board!: ElementRef;
   @ViewChildren('taskBlock') taskBlock!: QueryList<ElementRef>;
   mouseOutSubject$ = new Subject<boolean>();
+  toDoTasks!: TaskI[];
+  complexity!: ComplexityE;
+  selectedOption!: number;
 
-  constructor() {
+  constructor(
+    private taskService: TaskService
+  ) {
   }
 
   ngOnInit(): void {
+    this.fetchTasks()
   }
 
   ngAfterViewInit(): void {
@@ -47,15 +56,42 @@ export class BoardComponent implements OnInit, AfterViewInit {
 
   detectMouseUp(block: ElementRef): void {
     const draggedBlock = block.nativeElement;
-    fromEvent(draggedBlock, 'mouseup').subscribe(() => {
+    fromEvent(draggedBlock, 'mouseup').subscribe((mouseUp) => {
       this.taskBlock.forEach(elem => {
-        fromEvent(elem.nativeElement, 'mouseenter').pipe(
+        fromEvent(elem.nativeElement, 'mouseover').pipe(
           takeUntil(this.mouseOutSubject$)
         ).subscribe((res: MouseEvent | any) => {
-          console.log(res, 'aaa');
+          console.log(mouseUp);
+          console.log(res.fromElement, 'fromElement');
+          console.log(res.toElement, 'toElement');
           this.mouseOutSubject$.next(true)
         })
       })
     })
+  }
+
+  fetchTasks(): void {
+    this.toDoTasks = this.taskService.getTasksByStatus(TaskStatusE.TO_DO);
+  }
+
+  public get getComplexityStatus(): typeof ComplexityE {
+    return ComplexityE
+  }
+
+  showAndHideEditBlock(event: MouseEvent, id: number) {
+    event.stopPropagation();
+    this.selectedOption = id;
+  }
+
+  editTask(task: TaskI) {
+    console.log('edit', task)
+  }
+
+  removeTask(task: TaskI) {
+    console.log('remove', task)
+  }
+
+  onClickedOutside() {
+    this.selectedOption = -1
   }
 }
