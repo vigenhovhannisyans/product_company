@@ -4,7 +4,7 @@ import {TaskService} from "../../../../../../core/services/task.service";
 import {TaskStatusE} from "../../../../../../core/enums/task-status-e";
 import {TaskI} from "../../../../../../core/interfaces/task-i";
 import {ComplexityE} from "../../../../../../core/enums/complexityE";
-import {tap} from "rxjs/operators";
+import {finalize, tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-board',
@@ -45,6 +45,7 @@ export class BoardComponent implements OnInit, AfterViewInit {
           exhaustMap(() =>
             fromEvent(this.board.nativeElement, 'mousemove').pipe(
               takeUntil(this.mouseOutSubject$),
+              finalize(()=> console.log('finnalized'))
             )
           )
         ).subscribe((event: MouseEvent | any) => {
@@ -68,16 +69,12 @@ export class BoardComponent implements OnInit, AfterViewInit {
       this.mouseOutSubject$.next(true);
         if(res.screenX >= 280 && res.screenX <= 620){
           this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.TO_DO);
-          console.log('inside of to do')
         }else if(res.screenX >= 685 && res.screenX <= 1070) {
           this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.IN_PROGRESS);
-          console.log('inside of in progress')
         }else if(res.screenX >= 1100 && res.screenX <= 1474){
           this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.REVIEW);
-          console.log('inside of under review')
         }else if(res.screenX >= 1496 && res.screenX <= 1880) {
           this.getTaskByIdAndChangeStatus(res.target.id, TaskStatusE.DONE);
-          console.log('inside of done')
         }
 
     })
