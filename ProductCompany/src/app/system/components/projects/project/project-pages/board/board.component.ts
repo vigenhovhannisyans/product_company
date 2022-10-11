@@ -4,6 +4,7 @@ import {TaskService} from "../../../../../../core/services/task.service";
 import {TaskStatusE} from "../../../../../../core/enums/task-status-e";
 import {TaskI} from "../../../../../../core/interfaces/task-i";
 import {ComplexityE} from "../../../../../../core/enums/complexityE";
+import {tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-board',
@@ -43,7 +44,7 @@ export class BoardComponent implements OnInit, AfterViewInit {
         .pipe(
           exhaustMap(() =>
             fromEvent(this.board.nativeElement, 'mousemove').pipe(
-              takeUntil(fromEvent(this.board.nativeElement, 'mouseup')),
+              takeUntil(this.mouseOutSubject$),
             )
           )
         ).subscribe((event: MouseEvent | any) => {
