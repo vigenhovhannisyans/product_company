@@ -4,7 +4,7 @@ import {TaskService} from "../../../../../../core/services/task.service";
 import {TaskStatusE} from "../../../../../../core/enums/task-status-e";
 import {TaskI} from "../../../../../../core/interfaces/task-i";
 import {ComplexityE} from "../../../../../../core/enums/complexityE";
-import {finalize, tap} from "rxjs/operators";
+import {finalize} from "rxjs/operators";
 
 @Component({
   selector: 'app-board',
@@ -14,10 +14,6 @@ import {finalize, tap} from "rxjs/operators";
 export class BoardComponent implements OnInit, AfterViewInit {
   @ViewChildren('task') task!: QueryList<ElementRef>;
   @ViewChild('board') board!: ElementRef;
-  @ViewChild('toDo') toDo!: ElementRef;
-  @ViewChild('inProgress') inProgress!: ElementRef;
-  @ViewChild('underReview') underReview!: ElementRef;
-  @ViewChild('done') done!: ElementRef;
   mouseOutSubject$ = new Subject<boolean>();
   toDoTasks!: TaskI[];
   inProgressTasks!: TaskI[];
